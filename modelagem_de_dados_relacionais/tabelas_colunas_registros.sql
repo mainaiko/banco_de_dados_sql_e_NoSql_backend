@@ -25,6 +25,12 @@ ALTER TABLE usuarios_nova RENAME usuarios;
 
 ALTER TABLE usuarios MODIFY COLUMN endereco VARCHAR (150);
 
+ALTER TABLE usuarios
+MODIFY COLUMN id INT AUTO_INCREMENT,
+ADD PRIMARY KEY (id);
 
+ALTER TABLE usuarios
+ADD CONSTRAINT opa_testes
+FOREING KEY (id_usuario) REFERENCES usuarios(id);
 
-
+ 
