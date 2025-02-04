@@ -77,6 +77,21 @@ RIGHT JOIN destinos ds ON rs.id_destino = ds.id
 SELECT * FROM destinos
 WHERE id NOT IN (SELECT id_destino FROM reservas);
 
+SELECT COUNT(*) FROM usuarios;
+
+SELECT COUNT(*) AS total_usuarios FROM usuarios us
+INNER JOIN reservas rs ON us.id = rs.id;
+
+SELECT MAX(TIMESTANPDIFF(YEAR, data_nascimento, CURRENT_DATE())) AS maior_idade
+FROM usuarios;
+
+INSERT INTO reservas(id_usuario, id_destino) VALUES (1,1);
+
+SELECT * FROM reservas;
+
+SELECT COUNT(*) AS qtd_reservas, id_destino FROM reservas
+GROUP BY id_destino
+ORDER BY qtd_reservas;
 
 
 
