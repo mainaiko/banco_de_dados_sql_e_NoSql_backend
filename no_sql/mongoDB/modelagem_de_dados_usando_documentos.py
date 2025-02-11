@@ -34,11 +34,42 @@ cada documento possui um identificador unico chamado "_id"
     documento embutido
     referencia
     geoJSON
+estrutura de um documento
 
-    
+{
+    _id:ObjectId(""),
+    "nome_campo":"valor_campo",
+    ...
+}
+"""
 
-
-
-
-
+"""
+modelagem do usuario:
+{
+"_id": 1,
+"nome": "Aiko Marques",
+"idade": 24,
+"data_nascimento": "2001-05-01",
+"endereco": "raiacho 2",
+"enderecos":[{
+"logradouro": "riacho 2",
+"numero": 5,
+"bairro": "qc02",
+"cidade": "brasilia"
+}],
+"interesses": ["verde", "agua", "paz"],
+"reservas": [ 1,2 ]
+}
+"""
+"""
+modelagem do destino:
+{
+"_id": 2,
+"nome": "Chapada dos veadeiros",
+"descricao": "bao dimais",
+"localizacao": {
+"type": "Point",
+"coordinates": [-14.046000, -47.395999]
+}
+}
 """
