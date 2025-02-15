@@ -58,7 +58,8 @@ modelagem do usuario:
 "cidade": "brasilia"
 }],
 "interesses": ["verde", "agua", "paz"],
-"reservas": [ 1,2 ]
+"reservas": [ ObjectId("123"), ObjectId("456") 
+]
 }
 """
 """
@@ -72,4 +73,15 @@ modelagem do destino:
 "coordinates": [-14.046000, -47.395999]
 }
 }
+"""
+"""
+modelagem referencia
+{
+"_id": ObjetctId("123"),
+"destino": ObjetctId("456"),
+"data": "2025-02-15",
+"status": "pendente",
+"usuario": ObjectId(345),
+}
+
 """
