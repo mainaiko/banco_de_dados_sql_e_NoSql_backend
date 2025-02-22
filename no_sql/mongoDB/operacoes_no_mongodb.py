@@ -14,5 +14,15 @@ Inserindo documentos
 db.usuarios.insertOne({});
 db.usuarios.insertMany([{}]);
 
+consultando documentos
+
+db.usuarios.find({})
+db.usuarios.findOne({})
+db.usuarios.findOneAndUpdate({})
+db.usuarios.findOneAndDelete({})
+
+
+
+
 
 """
