@@ -21,8 +21,8 @@ db.usuarios.findOne({})
 db.usuarios.findOneAndUpdate({})
 db.usuarios.findOneAndDelete({})
 
+Excluindo documentos
 
-
-
-
+db.usuarios.deleteOne({});
+db.usuarios.deleteMany({});
 """
