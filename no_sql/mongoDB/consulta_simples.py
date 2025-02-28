@@ -29,4 +29,6 @@ ordenar os resultados de uma consulta com base em um ou mais campos
 limitaçao
 limitar o numero de documentos retornados em uma consulta
 
+paginaçao
+db.usuarios.find().skip(10).limit(5)
 """
