@@ -31,4 +31,16 @@ limitar o numero de documentos retornados em uma consulta
 
 paginaçao
 db.usuarios.find().skip(10).limit(5)
+
+ex de uso:
+
+{cidade: ($in:["Sao paulo","belo horizonte"])}
+
+project {nome: 1}
+sort {idade: 1, nome: -1}
+limit {1}
+
+ou
+
+db.usuarios.find({cidade: {$nin:["Sao paulo"]}}, {nome: 1}).sort({idade:1}).limit(1)
 """
