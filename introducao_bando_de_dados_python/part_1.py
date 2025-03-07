@@ -18,7 +18,4 @@ ex: uma tabela "clientes" pode ter campos como "ID", "nome", "email" e "telefone
 chaves primarias
 cada tabela em um banco de dados relacional deve ter uma chave primaria, que é uma coluna ou conjunto de colunas cujo o valor
 é unico para cada registro. isso garante que cada registro na tabela possa ser identificado de maneira unica
-
-
-
 """
