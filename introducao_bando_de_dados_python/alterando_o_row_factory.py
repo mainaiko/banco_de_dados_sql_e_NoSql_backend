@@ -30,35 +30,26 @@ def remover_registro(con, cursor, id):
 def inserir_muitos_registro(con, cursor, dados):
     cursor.executemany("INSERT INTO clientes (nome, email) VALUES (?,?)", dados)
     con.commit()
-# dados = [
-#     ("kamille", "kamille@gmail"),
-#     ("joao", "joao@gmail"),
-#     ("maria", "maria@gmail"),
-# ]
-
-"""
-consultas com um unico resultado
-o metodo 'fetchone' pode ser usado para um unico registro de resultado. ele retorna o proximo registro 
-na lista de resultados ou 'None' se nao houver mais resultados.
-"""
 
 def busca_unico_registro(cursor, id):
     cursor.execute("SELECT * FROM clientes WHERE id=?", (id,))
     return cursor.fetchone()
 
-"""
-consultas com multiplos resultados
-o metodo "fetchall()" pode ser usado para recuperar todos os registros de resultados de uma vez.
-ele retorna uma lista de registros ou uma lista vazia se nao ouver mais resultados
-"""
-
 def busca_varios_registros(cursor):
     return cursor.execute("SELECT * FROM clientes;")
 
+"""
+trabalhando com resultados de consulta
+os resultados das consultas sao retornados como tuplas por padrao. se a tupla nao atender 
+as nossas necessidades podemos usar a classe "sqlite3.row" ou uma "row_factory" customizada
+"""
+def row_factory(cursor, id):
+    cursor.row_factory = sqlite3.Row
+    cursor.execute("SELECT * FROM clientes WHERE id=?;", (id,))
+    result = cursor.fetchone()
+    print(dict(result))
 
-# cliente = busca_unico_registro(cursor, 1)
-# print (cliente)
-
-cliente = busca_varios_registros(cursor)
-for clientes in cliente:
-    print (clientes)
+"""
+codigo fica bem mais limpo e facil de manutençao dessa forma
+colocar o row logo no inicio para todas as instancias serem iguais
+"""
